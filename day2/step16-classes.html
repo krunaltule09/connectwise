@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // ES3
+        function Hero(fname, lname){
+            this.firstname = fname;
+            this.lastname = lname;
+            // this.city = "Mumbai";
+            /* this.fullname = function(){
+                return this.firstname+" "+this.lastname;
+            } */
+        };
+        Hero.prototype.fullname = function(){
+            return this.firstname+" "+this.lastname;
+        };
+        // Hero.prototype.city = "Bengaluru";
+        var hero1 = new Hero("Bruce","Wayne");
+        // hero1.city = "Pune";
+        //console.log(hero1.firstname);
+        //console.log(hero1.fullname());
+
+        var hero2 = new Hero("Clark","Kent");
+        //console.log(hero2.firstname);
+        //console.log(hero2.fullname());
+
+        console.log( hero1.fullname === hero2.fullname );
+        // console.log(hero1.fullname());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

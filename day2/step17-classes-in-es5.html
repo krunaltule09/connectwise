@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*         function Hero(fname, lname){
+            this.firstname = fname;
+            this.lastname = lname;
+        };
+        Hero.prototype.fullname = function(){
+            return this.firstname+" "+this.lastname;
+        }; */
+        // es5
+        /* class Hero{
+            constructor(fname, lname){
+                this.firstname = fname;
+                this.lastname = lname;
+            }
+            fullname(){
+                return this.firstname+" "+this.lastname;
+            }
+        } */
+
+        // es7
+        class Person{
+            message = 'default message';
+            constructor(msg){
+                this.message = msg;
+            }
+            saymessage(){
+                return this.message;
+            }
+        };
+
+        class Hero extends Person{
+            firstname = "default";
+            lastname = "default";
+            _secret = "my secret mission";
+            constructor(fname, lname, nmessage){
+                super( nmessage );
+                this.firstname = fname;
+                this.lastname = lname;
+            }
+            fullname(){
+                return this.firstname+" "+this.lastname;
+            }
+            static sayVersion(){
+                return "1001";
+            }
+            get secret(){
+                return this._secret;
+            }
+            set secret(nsecret){
+                this._secret = nsecret;
+            }
+        };
+        let hero1 = new Hero("Bruce", "Wayne", "save gotham");
+        let hero2 = new Hero("Clark", "Kent", "save metropolis");
+        console.log( hero1.fullname === hero2.fullname );// true
+        console.log( Hero.sayVersion() );
+        console.log( hero1.secret );
+        hero1.secret = "updated mission, save the world";
+        console.log( hero1.secret );
+        console.log( hero1.saymessage() );
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

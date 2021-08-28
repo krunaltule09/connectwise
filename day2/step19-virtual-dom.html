@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      /*   
+            let h1 = document.createElement("h1");
+            h1.innerHTML = "Welcome to your life";
+            document.addEventListener("DOMContentLoaded", function(){
+                document.getElementById("root").appendChild(h1);
+            });
+            setInterval(function(){
+                h1.innerText = Math.round( Math.random() * 1000 );
+            },2000); 
+        */
+        let elm = document.createElement("ul");
+        let listElm1 = document.createElement("li");
+        listElm1.innerText = "List Item 1";
+        let listElm2 = document.createElement("li");
+        listElm2.innerText = "List Item 2";
+        let listElm3 = document.createElement("li");
+        listElm3.innerText = "List Item 3";
+        let listElm4 = document.createElement("li");
+        listElm4.innerText = "List Item 4";
+        let listElm5 = document.createElement("li");
+        listElm5.innerText = "List Item 5";
+        elm.appendChild(listElm1);
+        elm.appendChild(listElm2);
+        elm.appendChild(listElm3);
+        elm.appendChild(listElm4);
+        elm.appendChild(listElm5);
+        document.addEventListener("DOMContentLoaded", function(){
+           document.getElementById("root").appendChild(elm);
+        });
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>

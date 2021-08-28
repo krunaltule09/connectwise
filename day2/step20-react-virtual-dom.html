@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>  
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        // var elm = React.createElement("h1",null,"Welcome to your life");
+
+/*         var elm = React.createElement("ul",null, 
+                   [React.createElement("li",{ key:1 }, "List Item 1"),
+                    React.createElement("li",{ key:2 }, "List Item 2"),
+                    React.createElement("li",{ key:3 }, "List Item 3"),
+                    React.createElement("li",{ key:4 }, "List Item 4"),
+                    React.createElement("li",{ key:5 }, "List Item 5")] ); */
+
+        /* 
+        let elm = document.createElement("ul");
+        let listElm1 = document.createElement("li");
+        listElm1.innerText = "List Item 1";
+        let listElm2 = document.createElement("li");
+        listElm2.innerText = "List Item 2";
+        let listElm3 = document.createElement("li");
+        listElm3.innerText = "List Item 3";
+        let listElm4 = document.createElement("li");
+        listElm4.innerText = "List Item 4";
+        let listElm5 = document.createElement("li");
+        listElm5.innerText = "List Item 5";
+        elm.appendChild(listElm1);
+        elm.appendChild(listElm2);
+        elm.appendChild(listElm3);
+        elm.appendChild(listElm4);
+        elm.appendChild(listElm5); 
+        */
+
+        var avengers = ['ironman','spiderman','hulk','captain america','scarlet', 'black widow'];
+           /*  var elm = <ol>{
+                avengers.map(function(val, idx){
+                    return <li key={ idx }> { val } </li>
+                })
+            }</ol>; */
+
+        function Elms(){
+            return <ol>{
+                        avengers.map(function(val, idx){
+                            return <li key={ idx }> { val } </li>
+                        })
+                    }</ol>;
+        };
+        ReactDOM.render(<Elms/>, document.getElementById("root"));
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>

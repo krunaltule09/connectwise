@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        import { Hero } from "./classes/hero.js";
+
+        let hero1 = new Hero("Bruce", "Wayne", "save gotham");
+        let hero2 = new Hero("Clark", "Kent", "save metropolis");
+        console.log( hero1.fullname === hero2.fullname );// true
+        console.log( Hero.sayVersion() );
+        console.log( hero1.secret );
+        hero1.secret = "updated mission, save the world";
+        console.log( hero1.secret );
+        console.log( hero1.saymessage() );
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

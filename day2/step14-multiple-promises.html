@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let asyncCallOne = async function(){
+            let promise = new Promise(function(res, rej){
+                setTimeout(function(){
+                    if(true){
+                        res("Resolve Message : Success from async call one");
+                    }else{
+                        rej("Error Message : Failure from async call one");
+                    }
+                },2000);
+            });
+            return await promise;
+        };
+        //---------------------------------------------------
+        let asyncCallTwo = function(){
+            let promise = new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(false){
+                        resolve("Resolve Message : Success from async call two");
+                    }else{
+                        reject("Error Message : Failure from async call two");
+                    }
+                },4000);
+            });
+            return promise;
+        };
+        // when you want all promises to be resolved
+        /*         
+        Promise.all([ asyncCallTwo(),asyncCallOne() ])
+        .then(function(res){
+            console.log("Response :", res);
+        })
+        .catch(function(err){
+            console.log("Error : ",err);
+        }); 
+        */
+       // when you want to use the first resolved data
+        /*      
+        */
+        Promise.any([ asyncCallTwo(),asyncCallOne() ])
+        .then(function(res){
+            console.log("Response :", res);
+        })
+        .catch(function(err){
+            console.log("Error : ",err);
+        }); 
+       // when you want either success or error from the fastest promise
+       /*  
+       Promise.race([ asyncCallTwo(),asyncCallOne() ])
+        .then(function(res){
+            console.log("Response :", res);
+        })
+        .catch(function(err){
+            console.log("Error : ",err);
+        });  
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

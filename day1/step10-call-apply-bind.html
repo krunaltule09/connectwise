@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var avenger1 = {
+            title : "Ironman",
+            firstname : "Tony",
+            lastname : "Stark",
+            fullname : function(message, power){
+                return this.firstname+" "+this.lastname+" says "+message+" power is : "+power;
+            }
+        };
+
+        var avenger2 = {
+            title : "Hulk",
+            firstname : "Bruce",
+            lastname : "Benner"
+        };
+
+        var avenger3 = {
+            title : "Captain America",
+            firstname : "Steve",
+            lastname : "Roggers"
+        };
+
+
+/*      console.log(avenger1.fullname());
+        console.log(avenger1.fullname.call(avenger2, "I am Hulk"));
+        console.log(avenger1.fullname.call(avenger3, "I can do this all day")); 
+ */
+       /*  
+        console.log(avenger1.fullname("I am Ironman",6));
+        console.log(avenger1.fullname.apply(avenger2,["I am Hulk",7]));
+        console.log(avenger1.fullname.apply(avenger3, ["I can do this all day",6]));  */
+
+      /*   
+        console.log(avenger1.fullname("I am Ironman",6));
+        console.log(avenger1.fullname.bind(avenger2)("I am Hulk",7));
+        console.log(avenger1.fullname.bind(avenger3)("I can do this all day",6)); */
+        var somefun ;
+        function clickHandler(arg){
+            somefun = avenger1.fullname.bind(arg);
+        }
+        function callHandler(arg1, arg2){
+            document.getElementById("log").innerHTML = somefun(arg1, arg2) ;
+        }
+        window.onload = function(){
+            document.getElementById("log").innerHTML = avenger1.title;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="clickHandler(avenger1)">Set Context to Ironman</button>
+    <button onclick="clickHandler(avenger2)">Set Context to Hulk</button>
+    <button onclick="clickHandler(avenger3)">Set Context to Captain America</button>
+    <br>
+    <button onclick="callHandler('I am Ironman',5)">Call Function Ironman</button>
+    <button onclick="callHandler('I am Hulk',6)">Call Function Hulk</button>
+    <button onclick="callHandler('I can do this all day',7)">Call Function Captain America</button>
+    <h1 id="log"></h1>
+</body>
+</html>

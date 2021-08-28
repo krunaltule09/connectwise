@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Application</title>
+    <script>
+        function init(event){
+            document.getElementsByTagName("h1")[0].innerHTML = "Welcome to your life !!!"+" "+event.target.title;
+        };
+        // window.onload = init;
+        // window.addEventListener("load", init);
+        // document.addEventListener("DOMContentLoaded", init);
+        // create 3 functions called fun1 fun2 fun3
+        // fun1 on body load
+        // fun2 on window.addEventListener("load", fun2);
+        // fun3 on DOMContentLoaded
+        function fun1(){
+            console.log("hello from fun1 body onload")
+        }
+        function fun2(){
+            console.log("hello from fun2 window.addEventListener")
+        }
+        function fun3(){
+            console.log("hello from fun3 DOMContentLoaded")
+        };
+        window.addEventListener("load", fun2);
+        document.addEventListener("DOMContentLoaded", fun3);
+    </script>
+</head>
+<!-- <body onload="init()"> -->
+<body onload="fun1()">
+    <h1></h1>
+    <!-- <script>
+        init();
+    </script> -->
+</body>
+</html>
+
+<!--
+    html:5
+    h1 tab Welcome to your life
+-->

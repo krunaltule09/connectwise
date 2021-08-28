@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let asyncCallOne = function(){
+            let promise = new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(true){
+                        resolve("Resolve Message : Success from async call one");
+                    }else{
+                        reject("Error Message : Failure from async call one");
+                    }
+                },4000);
+            });
+            return promise;
+        };
+        //---------------------------------------------------
+        let asyncCallTwo = function(){
+            let promise = new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    if(true){
+                        console.log("triggering asyncCallOne")
+                        resolve( asyncCallOne() );
+                    }else{
+                        reject("Error Message : Failure from async call two");
+                    }
+                },4000);
+            });
+            return promise;
+        };
+        // all
+        // race
+        // any 
+        asyncCallTwo().then(function(res){
+            console.log("Success : ", res);
+        }).catch(function(err){
+            console.log("Error : ", err)
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

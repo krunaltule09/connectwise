@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var hero = {
+            title : "Batman",
+            power : 6,
+            city : "Gotham"
+        };
+       /* 
+        var tempHero = hero;
+        console.log(hero.title); // Batman
+        console.log(tempHero.title); // Batman
+        tempHero.title = "Joker";
+        console.log(tempHero.title); // Joker
+        console.log(hero.title); // Joker
+        */
+       /* ES 3 */
+       /*        
+       var tempHeroTitle = hero.title;
+       var tempHeroPower = hero.power;
+       var tempHeroCity = hero.city; 
+       */
+
+       /* var tempHeroTitle = hero.title,
+           tempHeroPower = hero.power,
+           tempHeroCity = hero.city;
+
+       console.log(tempHeroTitle);
+       console.log(hero.title);
+       tempHeroTitle = "Joker";
+       console.log(tempHeroTitle);
+       console.log(hero.title); */
+
+      /*  var { 
+           title : tempHeroTitle, 
+           power : tempHeroPower, 
+           city : tempHeroCity } = hero;
+
+       console.log(tempHeroTitle);
+       console.log(hero.title);
+       tempHeroTitle = "Joker";
+       console.log(tempHeroTitle);
+       console.log(hero.title);  */
+
+       var { title, power, city } = hero;
+       console.log(title);
+       console.log(hero.title);
+       title = "Joker";
+       console.log(title);
+       console.log(hero.title); 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
